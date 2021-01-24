@@ -8,9 +8,15 @@
 
 import React from 'react';
 import {Navigation} from '@/navigation';
+import {store} from '@/store';
+import {Provider} from 'react-redux';
 
 const App: () => React$Node = () => {
-  return <Navigation />;
+  return (
+    <Provider store={store}>
+      <Navigation />
+    </Provider>
+  );
 };
 
 export default App;

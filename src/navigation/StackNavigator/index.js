@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {HomeScreen} from '@/scenes/Home';
+import {StackHomeScreen} from '@/scenes/StackHome';
 import {NavigationEventScreen} from '@/scenes/NavigationEvent';
 const Stack = createStackNavigator();
 
@@ -14,8 +14,8 @@ export function StackNavigator() {
           gestureDirection: 'horizontal',
         })}>
         <Stack.Screen
-          name="Home"
-          component={HomeScreen}
+          name="StackHome"
+          component={StackHomeScreen}
           options={{title: 'Overview'}}
         />
         <Stack.Screen
