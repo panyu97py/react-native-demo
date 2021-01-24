@@ -23,21 +23,25 @@ export class NavigationEventComponent extends Component {
   }
 
   subscribeEvent({navigation}) {
+    // This event is emitted when the screen comes into focus
     this._unSubscribeNavigationOnFocus = navigation.addListener(
       'focus',
       this.navigationOnFocus || noop,
     );
 
+    // This event is emitted when the screen goes out of focus
     this._unSubscribeNavigationOnBlur = navigation.addListener(
       'blur',
       this.navigationOnBlur || noop,
     );
 
+    //  This event is emitted when the user is a leaving the screen, there's a chance to prevent the user from leaving
     this._unSubscribeNavigationOnBeforeRemove = navigation.addListener(
-      'focus',
+      'beforeRemove',
       this.navigationOnBeforeRemove || noop,
     );
 
+    // This event is emitted when the navigator's state changes
     this._unSubscribeNavigationOnStateChange = navigation.addListener(
       'state',
       this.navigationOnStateChange || noop,
